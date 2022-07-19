@@ -1,0 +1,23 @@
+<div style="text-align: center">
+  <button style="cursor: pointer" (click)="agregar()">+</button>
+</div>
+
+<div class="box">
+  <app-persona
+  *ngFor="let personaElemento of personas; let i = index"
+  [persona] = "personaElemento"
+  [indice] = "i"
+  ></app-persona>
+</div>
+
+<!--<div class="box">
+  <app-formulario>--app-formulario
+ dentro de app-formulario  (personaCreada) = "personaAgregada($event)" cuando era con eventemitter
+  </app-formulario>
+</div>-->
+
+<!--en lugar de mostar el formulario se muestra el router outlet que son las rutas hijas del componente personas
+como lo son agregar, eliminar-->
+<router-outlet></router-outlet>
+
+

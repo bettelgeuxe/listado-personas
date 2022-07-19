@@ -1,0 +1,37 @@
+<div class="box">
+
+<form class="item" #f="ngForm" (ngSubmit)="f.form.valid && onGuardarPersona()">
+
+    <input
+    type="text"
+    name="nombre"
+    id="nombre"
+    placeholder="Nombre"
+    [(ngModel)]="nombreInput"
+    required
+    ><!--#nombreInput referencias locales--><!-- [(ngModel)]="nombreInput" dentro del div para two way binding-->
+    <!--con parámetros de referencia local #nombreInput-->
+
+
+    <input
+     type="text"
+     name="apellido"
+     id="apellido"
+     placeholder="Apellido"
+     [(ngModel)]="apellidoInput"
+     required
+     > <!--#apellidoInput refernecias locales--><!--[(ngModel)]="apellidoInput" dentro del div-->
+     <!--con parámetros de referencia local #apellidoInput-->
+
+
+    <button type="submit" style="cursor: pointer"> <!-- con parametros de referencia local (click)="agregarPersona(nombreInput, apellidoInput)"-->
+     +
+    </button>
+    <button *ngIf="index != null" type="submit" style="cursor: pointer"
+    class="buttonRed"
+    (click)="eliminarPersona()">
+      -
+    </button>
+
+</form>
+</div>
